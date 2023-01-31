@@ -56,6 +56,24 @@ public class Main {
     public static void task3() {
         System.out.println("Задача 3");
 
-}
+        int deliveryDistance = 95;
+        int days = calculateDeliveryDays(deliveryDistance);
+        if (days == -1) {
+            System.out.println("Доставка невозможна на расстояние " + deliveryDistance + " км");
+        } else {
+            System.out.println("Время доставки " + days + " дней");
+        }
+    }
 
+    private static int calculateDeliveryDays(int deliveryDistance) {
+        if (deliveryDistance >= 0 && deliveryDistance <= 20) {
+            return 1;
+        } else if (deliveryDistance > 20 && deliveryDistance <= 60) {
+            return 2;
+        } else if (deliveryDistance > 60 && deliveryDistance <= 100) {
+            return 3;
+        } else {
+            return -1;
+        }
+    }
 }
